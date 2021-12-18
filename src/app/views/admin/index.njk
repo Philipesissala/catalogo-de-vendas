@@ -1,0 +1,68 @@
+{% extends "admin/layout.njk" %}
+{% block content %}
+    <div class="wrapper">
+        <h1>Lista de Produtos</h1>
+        <a class="btn-newprooduct" href="/admin/products/new">
+           Novo produto
+        </a>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>DESIGNAÇÃO</th>
+                    <th>DESCRIÇÃO</th>
+                    <th>P/ ANTIGO</th>
+                    <th>P/ ATUAL</th>
+                    <th>AÇOES</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>3</th>
+                    <th>Iphone</th>
+                    <th>Telefone Iphone S7 80GB de memoria 4GB de rama e 8MP frontal</th>
+                    <th>270.000</th>
+                    <th>200.000</th>
+                    <th>
+                        <a href="">
+                            <img src="/assets/update.png" alt="Icone do botão de update">
+                        </a>
+                        <a href="">
+                            <img src="/assets/delete.png" alt="Icone do botão de delete">
+                        </a>
+                    </th>
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <th>Iphone</th>
+                    <th>Telefone Iphone S7 80GB de memoria 4GB de rama e 8MP frontal</th>
+                    <th>270.000</th>
+                    <th>200.000</th>
+                    <th>
+                        <a href="">
+                            <img src="/assets/update.png" alt="Icone do botão de update">
+                        </a>
+                        <a href="">
+                            <img src="/assets/delete.png" alt="Icone do botão de delete">
+                        </a>
+                    </th>
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <th>Iphone</th>
+                    <th>Telefone Iphone S7 80GB de memoria 4GB de rama e 8MP frontal</th>
+                    <th>270.000</th>
+                    <th>200.000</th>
+                    <th>
+                        <a href="">
+                            <img src="/assets/update.png" alt="Icone do botão de update">
+                        </a>
+                        <a href="">
+                            <img src="/assets/delete.png" alt="Icone do botão de delete">
+                        </a>
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
