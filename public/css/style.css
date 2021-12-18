@@ -101,15 +101,10 @@ p {
 .wrapper .cards .card_body .card__info button {
   padding: 7px 15px;
   color: white;
-  background-color: #00d553;
+  background-color: #0091d5;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.wrapper .cards .card_body .card__info button img {
-  width: 25px;
-  margin-right: 10px;
 }
 
 .wrapper .cards .card_body .card__info button:hover {
