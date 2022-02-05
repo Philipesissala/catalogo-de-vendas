@@ -5,4 +5,10 @@ module.exports = {
   create(req, res) {
     res.render("admin/categories/new");
   },
+
+  save(req, res) {
+    const designacao = req.body;
+
+    console.log(designacao);
+  },
 };

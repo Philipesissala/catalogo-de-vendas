@@ -1,4 +1,15 @@
 {%extends "admin/layout.njk"%}
 {%block content%}
-Cadastro de categorias
-{%endblock%}
+<div class="card">
+    <div class="card-head">
+        <h2>Cadastrar categoria</h2>
+    </div>
+    <div class="card-body">
+        <form action="/admin/categories/save" method="post">
+            <input type="text" name="designacao"></div>
+            <div class="card-footer">
+                <button type="submit">Cadastrar</button>
+            </div>
+        </form>
+    </div>
+    {%endblock%}

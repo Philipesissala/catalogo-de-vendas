@@ -1,1 +1,29 @@
 {%extends "admin/layout.njk"%}
+{%block content%}
+<div class="card-products">
+    <div class="card-head">
+        <h2>Cadastrar produto</h2>
+    </div>
+    <form action="">
+        <label for="">
+            Designação <input type="text" placeholder="Insira o nome do produto">
+        </label>
+        <div class="group">
+            <input type="number" placeholder="Preço Antigo">
+            <input type="number" placeholder="Preço Atual">
+        </div>
+        <label for="">Descrição</label>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <label for="">Imagens</label>
+        <div class="group file">
+            <input type="file">
+            <input type="file">
+            <input type="file">
+            <input type="file">
+        </div>
+        <div class="card-footer">
+            <button type="submit">Cadastrar</button>
+        </div>
+    </form>
+</div>
+{%endblock%}
