@@ -1,14 +1,23 @@
+const database = require("../database/database");
+
 module.exports = {
-  index(req, res) {
-    res.render("admin/categories/index");
+  async index(req, res) {
+    let response = await database.select().into("categorias")
+    res.render("admin/categories/index", { data: response });
   },
   create(req, res) {
     res.render("admin/categories/new");
   },
 
-  save(req, res) {
+  async save(req, res) {
     const designacao = req.body;
-
-    console.log(designacao);
+    console.log(designacao)
+    if (designacao != "") {
+      let response = await database.insert(designacao).into("categorias");
+      if (response > 0) {
+        console.log("Sucesso")
+        res.render("admin/categories/index");
+      }
+    }
   },
 };

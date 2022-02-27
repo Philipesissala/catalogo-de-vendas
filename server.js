@@ -1,5 +1,6 @@
 const express = require("express");
 const nunjucks = require("nunjucks");
+const category = require("./src/app/controllers/category");
 const server = express();
 
 const CategoryRoutes = require("./src/app/routes/category");
@@ -11,9 +12,9 @@ server.use(express.urlencoded({ extended: true }));
 server.use(express.static("public"));
 server.set("view engine", "njk");
 nunjucks.configure("src/app/views", {
+  express: server,
   noCache: true,
   autoescape: false,
-  express: server,
 });
 
 server.use(CategoryRoutes);
@@ -27,4 +28,4 @@ server.get("/admin", (req, res) => {
   res.render("admin/index");
 });
 
-server.listen(3333);
+server.listen(3333, () => console.log("Running..."));
