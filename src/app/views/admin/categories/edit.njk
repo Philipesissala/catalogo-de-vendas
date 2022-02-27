@@ -1,0 +1,16 @@
+{%extends "admin/layout.njk"%}
+{%block content%}
+<div class="card">
+    <div class="card-head">
+        <h2>Editar categoria</h2>
+    </div>
+    <div class="card-body">
+        <form action="/admin/category/update/{{data.id}}" method="post">
+            <div class="alert"></div>
+            <input type="text" name="designacao" value="{{data.designacao}}"></div>
+            <div class="card-footer">
+                <button type="submit">Alterar</button>
+            </div>
+        </form>
+    </div>
+    {%endblock%}
