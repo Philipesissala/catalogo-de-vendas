@@ -1,6 +1,5 @@
 const express = require("express");
 const nunjucks = require("nunjucks");
-const category = require("./src/app/controllers/category");
 const server = express();
 
 const CategoryRoutes = require("./src/app/routes/category");

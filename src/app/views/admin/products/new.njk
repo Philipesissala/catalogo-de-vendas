@@ -4,22 +4,26 @@
     <div class="card-head">
         <h2>Cadastrar produto</h2>
     </div>
-    <form action="">
+    <form action="/admin/products/save" method="post">
         <label for="">
-            Designação <input type="text" placeholder="Insira o nome do produto">
+            Designação <input type="text" name="designacao" placeholder="Insira o nome do produto">
+        </label>
+        <label for="">Categoria 
+            <select name="categoria_id">
+                {%for category in categories%}
+                <option value="{{category.id}}" >{{category.designacao}}</option>
+                {%endfor%}
+            </select>
         </label>
         <div class="group">
-            <input type="number" placeholder="Preço Antigo">
-            <input type="number" placeholder="Preço Atual">
+            <input type="number" name="antigo" placeholder="Preço Antigo">
+            <input type="number" name="atual" placeholder="Preço Atual">
         </div>
-        <label for="">Descrição</label>
-        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <label for="descricao">Descrição</label>
+        <textarea name="descricao" id="descricao" cols="30" rows="10"></textarea>
         <label for="">Imagens</label>
         <div class="group file">
-            <input type="file">
-            <input type="file">
-            <input type="file">
-            <input type="file">
+            <input type="file" name="imagem">
         </div>
         <div class="card-footer">
             <button type="submit">Cadastrar</button>

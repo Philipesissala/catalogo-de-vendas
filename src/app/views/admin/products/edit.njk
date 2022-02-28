@@ -1,0 +1,36 @@
+{%extends "admin/layout.njk"%}
+{%block content%}
+<div class="card-products">
+    <div class="card-head">
+        <h2>Editar produto</h2>
+    </div>
+    <form action="/admin/products/update/{{data.id}}" method="post">
+        <label for="">
+            Designação <input type="text" name="designacao" placeholder="Insira o nome do produto" value="{{data.designacao}}">
+        </label>
+        <label for="">Categoria 
+            <select name="categoria_id">
+                {%if categories.id == data.categoria_id%}
+                <option value="categories.id" selected>{{categories.designacao}}</option>
+                {%endif%}
+                {%for category in categories%}
+                <option value="{{category.id}}" >{{category.designacao}}</option>
+                {%endfor%}
+            </select>
+        </label>
+        <div class="group">
+            <input type="number" name="antigo" placeholder="Preço Antigo" min="0" value="{{data.antigo}}">
+            <input type="number" name="atual" placeholder="Preço Atual" min="0" value="{{data.novo}}">
+        </div>
+        <label for="descricao">Descrição</label>
+        <textarea name="descricao" id="descricao" cols="30" rows="10">{{data.descricao}}</textarea>
+        <label for="">Imagens</label>
+        <div class="group file">
+            <input type="file" name="imagem" value="{{data.imagem}}">
+        </div>
+        <div class="card-footer">
+            <button type="submit">Alterar</button>
+        </div>
+    </form>
+</div>
+{%endblock%}
