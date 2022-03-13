@@ -1,8 +1,9 @@
 const database = require("../database/database");
+const slugify = require("slugify");
 
 module.exports = {
   async index(req, res) {
-    let response = await database.select().into("categorias")
+    let response = await database.select().into("categorias");
     res.render("admin/categories/index", { datas: response });
   },
   create(req, res) {
@@ -10,9 +11,11 @@ module.exports = {
   },
 
   async save(req, res) {
-    const designacao = req.body;
+    const designacao = req.body.designacao;
+    console.log(designacao)
+    const slug = slugify(designacao);
     if (designacao != "") {
-      let response = await database.insert(designacao).into("categorias");
+      let response = await database.insert({designacao, slug}).into("categorias");
       if (response > 0) {
         res.redirect("/admin/categories");
       }
@@ -34,10 +37,12 @@ module.exports = {
     let id = req.params.id;
     let designacao = req.body.designacao;
 
-    let response = await database.update({ designacao: designacao }).where("id", id).table("categorias");
+    let response = await database
+      .update({ designacao: designacao })
+      .where("id", id)
+      .table("categorias");
     if (response > 0) {
       res.redirect("/admin/categories");
     }
-
-  }
+  },
 };

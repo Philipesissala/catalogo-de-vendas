@@ -4,7 +4,7 @@
     <div class="card-head">
         <h2>Cadastrar produto</h2>
     </div>
-    <form action="/admin/products/save" method="post">
+    <form action="/admin/products/save" method="post" enctype="multipart/form-data">
         <label for="">
             Designação <input type="text" name="designacao" placeholder="Insira o nome do produto">
         </label>
@@ -19,9 +19,8 @@
             <input type="number" name="antigo" placeholder="Preço Antigo">
             <input type="number" name="atual" placeholder="Preço Atual">
         </div>
-        <label for="descricao">Descrição</label>
-        <textarea name="descricao" id="descricao" cols="30" rows="10"></textarea>
-        <label for="">Imagens</label>
+        
+        <label for="">Imagem</label>
         <div class="group file">
             <input type="file" name="imagem">
         </div>
